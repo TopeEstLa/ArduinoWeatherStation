@@ -33,7 +33,7 @@ void loop() {
   lcd.print(" c");
   lcd.setCursor(0, 1);
   lcd.print("Humidity: ");
-  lcd.print(temp);
+  lcd.print(hum);
   lcd.print(" %");
 
   delay(2000);
