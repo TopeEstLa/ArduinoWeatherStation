@@ -12,7 +12,8 @@
       "left": 255.2,
       "attrs": { "pins": "i2c" }
     },
-    { "type": "wokwi-dht22", "id": "dht1", "top": -239.7, "left": 23.4, "attrs": {} }
+    { "type": "wokwi-dht22", "id": "dht1", "top": -239.7, "left": 23.4, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht2", "top": -239.7, "left": 119.4, "attrs": {} }
   ],
   "connections": [
     [ "uno:5V", "bb1:bp.1", "red", [ "v0" ] ],
@@ -22,12 +23,19 @@
     [ "lcd1:SCL", "uno:A5", "green", [ "h0" ] ],
     [ "lcd1:SDA", "uno:A4", "gold", [ "h0" ] ],
     [ "bb1:bn.11", "bb1:15b.j", "black", [ "v0" ] ],
+    [ "bb1:bp.9", "bb1:12b.j", "red", [ "v-29.7", "h-0.8" ] ],
+    [ "bb1:13b.g", "uno:2", "orange", [ "v0" ] ],
     [ "dht1:VCC", "bb1:12b.f", "", [ "$bb" ] ],
     [ "dht1:SDA", "bb1:13b.f", "", [ "$bb" ] ],
     [ "dht1:NC", "bb1:14b.f", "", [ "$bb" ] ],
     [ "dht1:GND", "bb1:15b.f", "", [ "$bb" ] ],
-    [ "bb1:bp.9", "bb1:12b.j", "red", [ "v-29.7", "h-0.8" ] ],
-    [ "bb1:13b.g", "uno:2", "orange", [ "v0" ] ]
+    [ "dht2:VCC", "bb1:22b.f", "", [ "$bb" ] ],
+    [ "dht2:SDA", "bb1:23b.f", "", [ "$bb" ] ],
+    [ "dht2:NC", "bb1:24b.f", "", [ "$bb" ] ],
+    [ "dht2:GND", "bb1:25b.f", "", [ "$bb" ] ],
+    [ "bb1:bn.20", "bb1:25b.j", "black", [ "v0" ] ],
+    [ "bb1:bp.17", "bb1:22b.j", "red", [ "v0" ] ],
+    [ "uno:4", "bb1:23b.g", "blue", [ "v0" ] ]
   ],
   "dependencies": {}
 }
