@@ -19,13 +19,12 @@ void setup() {
 }
 
 void loop() {
-  dht_22 = dht_22.readHumidity(); //Only get humidity from the DHT 22
-
+  hum = dht_22.readHumidity(); //Only get humidity from the DHT 22
 
   float temp_11 = dht_11.readTemperature();
   float temp_22 = dht_22.readTemperature();
 
-  temp = temp_11 + temp_22 / 2 //take the average between DHT11 & DHT22 
+  temp = (temp_11 + temp_22) / 2; //take the average between DHT11 & DHT22 
 
   lcd.clear();
   lcd.setCursor(0, 0);
