@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Antonin TopeEstLa",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -243, "left": -93.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 87, "left": -279, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": 102.4,
+      "left": 255.2,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -239.7, "left": 23.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:5V", "bb1:bp.1", "red", [ "v0" ] ],
+    [ "uno:GND.2", "bb1:bn.1", "black", [ "v0" ] ],
+    [ "lcd1:GND", "bb1:bn.25", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "bb1:bp.24", "red", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4", "gold", [ "h0" ] ],
+    [ "bb1:bn.11", "bb1:15b.j", "black", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:12b.f", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:13b.f", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:14b.f", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:15b.f", "", [ "$bb" ] ],
+    [ "bb1:bp.9", "bb1:12b.j", "red", [ "v-29.7", "h-0.8" ] ],
+    [ "bb1:13b.g", "uno:2", "orange", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
